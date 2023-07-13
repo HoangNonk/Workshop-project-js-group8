@@ -1,5 +1,6 @@
-import home from '~/pages/home';
-const routers = [
+import home from '~/pages/client/home';
+import homeAdmin from '~/pages/admin/home';
+const routersClient = [
     {
         path: '/',
         element: home,
@@ -7,4 +8,13 @@ const routers = [
     },
 ];
 
-export default routers;
+const routersAdmin = [
+    {
+        path: '/admin',
+        element: homeAdmin,
+        layout: '',
+    },
+];
+
+export default routersClient;
+export { routersAdmin };
