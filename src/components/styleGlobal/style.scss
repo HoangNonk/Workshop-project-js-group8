@@ -1,2 +1,6 @@
 // Import all of Bootstrap's CSS
 @import 'bootstrap/scss/bootstrap';
+// Import Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
