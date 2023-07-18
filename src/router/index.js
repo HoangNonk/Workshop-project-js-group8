@@ -14,6 +14,11 @@ const routersAdmin = [
         element: homeAdmin,
         layout: '',
     },
+    {
+        path: '/admin/user',
+        element: homeAdmin,
+        layout: '',
+    },
 ];
 
 export default routersClient;
