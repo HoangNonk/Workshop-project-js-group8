@@ -1,5 +1,5 @@
 import '~/components/styleGlobal/style.scss';
-import render, { router } from '~/utils/render';
+import { render, router } from './utils';
 import routersClient, { routersAdmin } from '~/router';
 import layoutMain from './layout/layoutMain';
 
