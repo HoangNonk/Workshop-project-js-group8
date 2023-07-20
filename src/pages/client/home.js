@@ -1,6 +1,5 @@
-import allProducts from '~/api/allProducts';
+import useEffect from '~/utils/useEffect';
 const home = () => {
-    allProducts();
     return `<div class="container tw-bg-red-700">
             <h2>Home Page Client</h2>
         </div>`;
