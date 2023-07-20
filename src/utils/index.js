@@ -1,7 +1,6 @@
 import Navigo from 'navigo';
 const router = new Navigo('/');
 const app = document.querySelector('#app');
-
 let effects = [];
 const useEffect = (cb) => {
     effects.push({
