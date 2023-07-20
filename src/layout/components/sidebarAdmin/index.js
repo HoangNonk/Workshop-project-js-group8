@@ -1,5 +1,4 @@
-import { router } from '~/utils/render';
-import useEffect from '~/utils/useEffect';
+import { router, useEffect } from '~/utils';
 const sidebar = () => {
     const data = [
         {
