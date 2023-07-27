@@ -1,8 +1,9 @@
 import Navigo from 'navigo';
-const router = new Navigo('/');
+const router = new Navigo('/', { strategy: 'ALL' });
 const app = document.querySelector('#app');
 let effects = [];
-const useEffect = (cb) => {
+const useEffect = (cb = () => {}) => {
+
     effects.push({
         cb,
     });
