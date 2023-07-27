@@ -1,11 +1,10 @@
 import allProducts from '~/api/allProducts';
 const listProduct = () => {
-    let res;
+    let res = [];
     const getAllProduct = async () => {
-        res = await allProducts();
+        await allProducts();
     };
     getAllProduct();
-    console.log(res);
     return ` 
     <div class="tw-flex-1 tw-p-4">
         <div>
@@ -29,7 +28,7 @@ const listProduct = () => {
                 ${res.map(
                     (item) => `
                     <tr>
-                        <td class="tw-py-3 tw-max-w-xs">${item.title}</td>
+                        <td class="tw-py-3 tw-max-w-xs"></td>
                         <td class="tw-py-3">
                             <img src="" class="tw-w-32 tw-h-20 tw-object-cover tw-rounded-md"/>
                         </td>
