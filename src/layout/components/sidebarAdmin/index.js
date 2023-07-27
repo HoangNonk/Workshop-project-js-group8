@@ -22,21 +22,7 @@ const sidebar = () => {
             active: false,
         },
     ];
-    let dataSidebar;
-    useEffect(() => {
-        console.log(1234);
-        const currentLocation = router.getCurrentLocation().url;
-        console.log(currentLocation);
-        // dataSidebar = data.map((element) => {
-        //     if (currentLocation === element.href) {
-        //         return {
-        //             ...element,
-        //             active: true,
-        //         };
-        //     }
-        //     return element;
-        // });
-    });
+    useEffect(() => {});
     return `
     <div class="">
         <div class="tw-w-[300px] tw-sticky tw-top-0 tw-max-h-screen tw-min-h-screen tw-border-r tw-border-[#ccc]/50 tw-border-solid tw-pr-3">
@@ -49,7 +35,7 @@ const sidebar = () => {
                     (element) => `
                 <li><a href="${
                     element.href
-                }" class="tw-text-lg tw-font-semibold tw-block tw-pl-5 tw-py-3 hover:tw-bg-gray-400/10 ${
+                }" class="sidebar tw-text-lg tw-block tw-pl-5 tw-py-3 hover:tw-bg-gray-400/10 tw-rounded-md ${
                         element.active
                             ? 'tw-border-l-4 tw-border-solid tw-border-[#F15E2D] tw-text-[#F15E2D]'
                             : 'tw-text-gray-500'

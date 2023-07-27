@@ -1,7 +1,8 @@
 import '~/components/styleGlobal/style.scss';
 import { render, router } from './utils';
 import routersClient, { routersAdmin } from '~/router';
-import layoutMain from './layout/layoutMain';
+import layoutMain from '~/layout/layoutMain';
+import layoutAdmin from '~/layout/layoutAdmin';
 
 // Định nghĩa cái route
 routersClient.map((route) => {
@@ -15,7 +16,7 @@ routersClient.map((route) => {
 routersAdmin.map((route) => {
     if (route.layout === '') {
         router.on(route.path, () => {
-            render(layoutMain(route.element));
+            render(layoutAdmin(route.element));
         });
     }
 });
