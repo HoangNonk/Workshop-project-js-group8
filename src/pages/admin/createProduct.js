@@ -1,6 +1,7 @@
 import { useEffect } from '~/utils';
 import { $, $$ } from '~/utils/jquery';
 import validateCreate from '~/components/validateCreate';
+import uploadProduct from '~/api/uploadProduct';
 const createProduct = () => {
     useEffect(() => {
         let btnCreate = $('.btn-create');
@@ -21,7 +22,7 @@ const createProduct = () => {
             e.preventDefault();
             if (colorProduct.value && amountProduct.value) {
                 arrType.push({
-                    color: colorProduct.value,
+                    code: colorProduct.value,
                     amount: amountProduct.value,
                 });
                 render();
@@ -146,18 +147,12 @@ const createProduct = () => {
             } else if (codeProduct.trim() === '') {
                 return {
                     error: true,
-                    message: {
-                        error: true,
-                        message: 'Bạn chưa có tên sản phẩm',
-                    },
+                    message: 'Bạn chưa có mã sản phẩm',
                 };
             } else if (imageProduct.trim() === '') {
                 return {
                     error: true,
-                    message: {
-                        error: true,
-                        message: 'Bạn chưa có tên sản phẩm',
-                    },
+                    message: 'Bạn chưa có ảnh sản phẩm',
                 };
             }
             return {
@@ -207,7 +202,10 @@ const createProduct = () => {
                     gender,
                     status,
                 };
-                console.log(data);
+                const apiUploadProduct = async () => {
+                    await uploadProduct(data);
+                };
+                apiUploadProduct();
             }
         });
     });
@@ -285,8 +283,7 @@ const createProduct = () => {
                     </div>
                     <div class="tw-flex tw-flex-col">
                         <label class="tw-py-2">Thông tin sản phẩm</label>
-                        <textarea value="ddd" class="tw-bg-gray-100 tw-rounded-md tw-outline-0 tw-pl-4 tw-pt-2 tw-resize-none info"cols="30" rows="10" placeholder="Thông tin">
-                        </textarea>
+                        <textarea value="ddd" class="tw-bg-gray-100 tw-rounded-md tw-outline-0 tw-pl-4 tw-pt-2 tw-resize-none info"cols="30" rows="10" placeholder="Thông tin"></textarea>
                     </div>
                     <div class="tw-flex tw-flex-col tw-mt-4">
                         <button class="tw-bg-blue-500 tw-rounded-md tw-py-3 tw-text-white tw-font-semibold btn-create">

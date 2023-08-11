@@ -1,11 +1,17 @@
 import allProducts from '~/api/allProducts';
+import { useEffect } from '~/utils';
+import product from '~/components/admin/product';
 const listProduct = () => {
-    let res = [];
-    const getAllProduct = async () => {
-        await allProducts();
-    };
-    getAllProduct();
-    return ` 
+    useEffect(() => {
+        const getAllProduct = async () => {
+            const listProduct = document.querySelector('.list-product');
+            const res = await allProducts();
+            const result = res.map((element) => product(element)).join('');
+            listProduct.innerHTML = result;
+        };
+        getAllProduct();
+    });
+    return `
     <div class="tw-flex-1 tw-p-4">
         <div>
             <h2 class="tw-text-3xl tw-font-semibold">Danh sách sản phẩm</h2>
@@ -24,23 +30,7 @@ const listProduct = () => {
                         <th class="tw-py-3 tw-font-medium">Xóa</th>
                     </tr>
                 </thead>
-                <tbody>
-                ${res.map(
-                    (item) => `
-                    <tr>
-                        <td class="tw-py-3 tw-max-w-xs"></td>
-                        <td class="tw-py-3">
-                            <img src="" class="tw-w-32 tw-h-20 tw-object-cover tw-rounded-md"/>
-                        </td>
-                        <td class="tw-py-3">1961</td>
-                        <td class="tw-py-3">1961</td>
-                        <td class="tw-py-3">1961</td>
-                        <td class="tw-py-3">1961</td>
-                        <td class="tw-text-blue-500 tw-font-semibold tw-cursor-pointer tw-py-3">Sửa</td>
-                        <td class="tw-text-red-500 tw-font-semibold tw-cursor-pointer tw-py-3">Xóa</td>
-                    </tr>
-                    `,
-                )}
+                <tbody class="list-product">
                 </tbody>
             </table>
         </div>

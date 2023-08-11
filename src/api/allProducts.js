@@ -1,7 +1,11 @@
 import { GET } from './httpRequest';
 const allProducts = async () => {
-    const data = await GET('/products');
-    return data;
+    try {
+        const data = await GET('/products');
+        return data;
+    } catch (error) {
+        return error;
+    }
 };
 
 export default allProducts;
