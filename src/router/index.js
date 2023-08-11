@@ -2,7 +2,9 @@ import home from '~/pages/client/home';
 import homeAdmin from '~/pages/admin/home';
 import createProduct from '~/pages/admin/createProduct';
 import listProduct from '~/pages/admin/listProduct';
-import productList from '~/pages/client/productList';
+import updateProduct from '~/pages/admin/updateProduct';
+import login from '~/pages/client/login';
+import register from '~/pages/client/register';
 const routersClient = [
     {
         path: '/',
@@ -10,9 +12,14 @@ const routersClient = [
         layout: '',
     },
     {
-        path: '/product-list',
-        element: productList,
-        layout: '',
+        path: '/account/login',
+        element: login,
+        layout: 'auth',
+    },
+    {
+        path: '/account/register',
+        element: register,
+        layout: 'auth',
     },
 ];
 
@@ -30,6 +37,11 @@ const routersAdmin = [
     {
         path: '/admin/list-product',
         element: listProduct,
+        layout: '',
+    },
+    {
+        path: '/admin/update-product/:id',
+        element: updateProduct,
         layout: '',
     },
 ];
