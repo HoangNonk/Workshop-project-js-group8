@@ -43,10 +43,10 @@ const createProduct = () => {
                 .map(
                     (element) => `
                 <div class="tw-bg-gray-100 tw-rounded-md tw-py-1 tw-px-2 tw-flex tw-items-center tw-mt-3">
-                    <div class="tw-w-4 tw-h-4 tw-rounded-sm tw-mr-2" style="background: ${element.color}">
+                    <div class="tw-w-4 tw-h-4 tw-rounded-sm tw-mr-2" style="background: ${element.code}">
                     </div>
                     <p>${element.amount}</p>
-                    <p class="tw-text-sm tw-px-1 tw-rounded-sm tw-cursor-pointer close-type" data-color="${element.color}">&#9932;</p>
+                    <p class="tw-text-sm tw-px-1 tw-rounded-sm tw-cursor-pointer close-type" data-color="${element.code}">&#9932;</p>
                 </div>
                 `,
                 )
@@ -258,6 +258,7 @@ const createProduct = () => {
                             <option value="Limited Edition">Limited Edition</option>
                             <option value="Online Only">Online Only</option>
                             <option value="Sale off">Sale off</option>
+                            <option value="Hết hàng">Hết hàng</option>
                         </select>
                     </div>
                     <div class="tw-flex tw-flex-col">

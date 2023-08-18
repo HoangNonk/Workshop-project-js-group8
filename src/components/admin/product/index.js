@@ -10,7 +10,7 @@ const product = (data) => {
         <td class="tw-py-3">${data.gender}</td>
         <td class="tw-py-3">${data.status}</td>
         <td class="tw-text-blue-500 tw-font-semibold tw-cursor-pointer tw-py-3"><a href="/admin/update-product/${data._id}" data-navigo>Sửa</a></td>
-        <td class="tw-text-red-500 tw-font-semibold tw-cursor-pointer tw-py-3">Xóa</td>
+        <td class="tw-text-red-500 tw-font-semibold tw-cursor-pointer tw-py-3 btn-delete" data-id="${data._id}">Xóa</td>
     </tr>
     `;
 };

@@ -4,7 +4,7 @@ const layoutAdmin = (children) => {
     <div>
         <div class="tw-flex tw-max-w-[1440px] tw-m-auto tw-px-4">
         ${sidebar()}
-        ${children()}
+        ${children}
         </div>
     </div>
     `;

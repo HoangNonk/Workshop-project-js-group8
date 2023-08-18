@@ -27,6 +27,15 @@ const reducer = (state = initState, action) => {
             localStorage.setItem('current', JSON.stringify(state));
             return state;
         }
+        case 'LOGOUT': {
+            localStorage.removeItem('current');
+            return {
+                ...state,
+                user: {
+                    ...action.payload,
+                },
+            };
+        }
         case 'ADD_TOKEN': {
             return {
                 ...state,
@@ -56,6 +65,12 @@ const actionLogin = function (payload) {
         payload,
     };
 };
+const actionLogout = function (payload) {
+    return {
+        type: 'LOGOUT',
+        payload,
+    };
+};
 const actionSaveLocal = function () {
     return {
         type: 'SAVE_LOCAL',
@@ -70,4 +85,4 @@ const actionAddToken = function (payload) {
 
 const store = createStore(reducer);
 
-export { actionLogin, store, actionSaveLocal, actionGetLocal, actionAddToken };
+export { actionLogin, store, actionSaveLocal, actionGetLocal, actionAddToken, actionLogout };

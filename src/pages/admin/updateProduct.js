@@ -1,9 +1,13 @@
 import { router, useEffect } from '~/utils';
 import { $, $$ } from '~/utils/jquery';
 import oneProducts from '~/api/oneProducts';
+import httpUpdateProduct from '~/api/httpUpdateProduct';
 import validateCreate from '~/components/validateCreate';
 const updateProduct = () => {
     useEffect(() => {
+        const url = router.getCurrentLocation().url;
+        const index = url.lastIndexOf('/') + 1;
+        const idProduct = url.slice(index);
         const nameProduct = $('.name-product');
         const priceProduct = $('.price-product');
         const codeProduct = $('.code-product');
@@ -206,18 +210,14 @@ const updateProduct = () => {
                     gender,
                     status,
                 };
-                console.log(data);
-                // const apiUploadProduct = async () => {
-                //     await uploadProduct(data);
-                // };
-                // apiUploadProduct();
+                const apiUpdateProduct = async () => {
+                    const res = await httpUpdateProduct(idProduct, data);
+                };
+                apiUpdateProduct();
             }
         });
         const getOneProduct = async () => {
-            const url = router.getCurrentLocation().url;
-            const index = url.lastIndexOf('/') + 1;
-            const id = url.slice(index);
-            const res = await oneProducts(id);
+            const res = await oneProducts(idProduct);
             nameProduct.value = res.title;
             priceProduct.value = res.price;
             imageProduct.value = res.thumbnail;
@@ -235,7 +235,6 @@ const updateProduct = () => {
                 'afterbegin',
                 `<option selected hidden value="${res.status}">${res.status}</option>`,
             );
-
             info.value = res.info;
         };
         getOneProduct();

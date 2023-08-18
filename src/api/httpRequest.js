@@ -20,10 +20,23 @@ const POST = async (url, data, options = {}) => {
         return error;
     }
 };
-const POSTa = async (url, options = {}) => {
-    const res = await httpRequest.post(url, options, { withCredentials: true, Credential: 'same-site' });
-    return res.data;
+const PATCH = async (url, data, options = {}) => {
+    try {
+        const res = await httpRequest.patch(url, data, options, { withCredentials: true });
+        return res.data;
+    } catch (error) {
+        return error;
+    }
+};
+
+const DELETE = async (url, options) => {
+    try {
+        const res = await httpRequest.delete(url, options);
+        return res.data;
+    } catch (error) {
+        return error;
+    }
 };
 
 export default httpRequest;
-export { GET, POST, POSTa };
+export { GET, POST, PATCH, DELETE };

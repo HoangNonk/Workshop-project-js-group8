@@ -10,7 +10,7 @@ function layoutAuth(children) {
                 <div>
                     <h1><a href="/" data-navigo><img src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Logo_Ananas_Header.svg" alt="logo" class="tw-mx-auto tw-h-16"/></a></h1>
                 </div>
-                ${children()}
+                ${children}
             </div>
         </div>
             </div>
