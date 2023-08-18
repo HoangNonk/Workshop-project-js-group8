@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const httpRequest = axios.create({
-    baseURL: 'http://localhost:8000/api',
+    baseURL: 'https://xuong-js.onrender.com/api',
 });
 
 const GET = async (url, options = {}) => {
