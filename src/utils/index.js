@@ -1,18 +1,17 @@
 import Navigo from 'navigo';
-const router = new Navigo('/', { strategy: 'ALL' });
-const app = document.querySelector('#app');
+const router = new Navigo('/', { linksSelector: 'a' });
 let effects = [];
 const useEffect = (cb = () => {}) => {
-
     effects.push({
         cb,
     });
 };
 
 function render(page) {
-    app.innerHTML = page;
+    const app = document.querySelector('#app');
+    app.innerHTML = page();
     effects.forEach((element) => element.cb());
     effects = [];
 }
 
-export { render, router, app, useEffect };
+export { render, router, useEffect };

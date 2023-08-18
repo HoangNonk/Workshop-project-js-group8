@@ -5,10 +5,28 @@ import listProduct from '~/pages/admin/listProduct';
 import updateProduct from '~/pages/admin/updateProduct';
 import login from '~/pages/client/login';
 import register from '~/pages/client/register';
+import productList from '~/pages/client/productList';
+import productDetail from '~/pages/client/productDetail';
+import profile from '~/pages/client/profile';
 const routersClient = [
     {
         path: '/',
         element: home,
+        layout: '',
+    },
+    {
+        path: '/product-list',
+        element: productList,
+        layout: '',
+    },
+    {
+        path: '/product/:id-:code',
+        element: productDetail,
+        layout: '',
+    },
+    {
+        path: '/account/profile',
+        element: profile,
         layout: '',
     },
     {
