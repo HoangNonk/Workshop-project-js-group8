@@ -28,11 +28,6 @@ const routersClient = [
         element: saleOffPage,
         layout: '',
     },
-    {
-        path: '/product-details/:id',
-        element: productDetails,
-        layout: '',
-    },
 ];
 
 const routersAdmin = [
