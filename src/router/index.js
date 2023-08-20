@@ -6,7 +6,6 @@ import updateProduct from '~/pages/admin/updateProduct';
 import login from '~/pages/client/login';
 import register from '~/pages/client/register';
 import saleOffPage from '~/pages/client/saleOff';
-import productDetails from '~/pages/client/productDetails';
 const routersClient = [
     {
         path: '/',
