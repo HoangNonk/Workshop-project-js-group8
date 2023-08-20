@@ -20,7 +20,7 @@ const login = () => {
             apiLogin();
         });
     });
-    return `<div class="tw-mb-5">
+    return /* html */ `<div class="tw-mb-5">
                 <div>
                     <h2 class="tw-text-2xl tw-font-medium tw-mt-4 tw-text-center">Đăng nhập</h2>
                 </div>

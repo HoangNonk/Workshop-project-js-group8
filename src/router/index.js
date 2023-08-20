@@ -5,6 +5,8 @@ import listProduct from '~/pages/admin/listProduct';
 import updateProduct from '~/pages/admin/updateProduct';
 import login from '~/pages/client/login';
 import register from '~/pages/client/register';
+import saleOffPage from '~/pages/client/saleOff';
+import productDetails from '~/pages/client/productDetails';
 const routersClient = [
     {
         path: '/',
@@ -20,6 +22,16 @@ const routersClient = [
         path: '/account/register',
         element: register,
         layout: 'auth',
+    },
+    {
+        path: '/sale-off',
+        element: saleOffPage,
+        layout: '',
+    },
+    {
+        path: '/product-details/:id',
+        element: productDetails,
+        layout: '',
     },
 ];
 
